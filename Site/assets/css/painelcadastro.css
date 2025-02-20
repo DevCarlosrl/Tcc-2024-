@@ -1,0 +1,142 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  width: 90%;
+  height: 80%;
+  border-radius: 10px;
+  background: white;
+  overflow: hidden;
+}
+
+.header {
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  background-color: rgba(57, 57, 226, 0.1);
+}
+
+.header span {
+  font-weight: 900;
+  font-size: 20px;
+}
+
+#print-button {
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  background-color: rgb(57, 57, 226);
+  cursor: pointer;
+}
+
+.divTable {
+  padding: 10px;
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: #f1f1f1;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  font-weight: bold;
+}
+
+tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.acao {
+  text-align: center;
+  width: 100px;
+}
+
+/* Estilo adicional para a tabela */
+td {
+  max-width: 150px; /* Limitar a largura das células */
+  overflow: hidden; /* Ocultar texto que excede o limite */
+  text-overflow: ellipsis; /* Exibir reticências para texto longo */
+  white-space: nowrap; /* Não quebrar texto */
+}
+
+.back-button {
+  position: relative;
+  margin: 10px;
+}
+
+.back-button img {
+  width: 20px;
+  height: 20px;
+}
+
+.back-button:hover {
+  opacity: 0.5;
+}
+
+/* Estilo para o formulário de filtragem */
+.filter-form {
+  display: flex;
+  gap: 20px; /* Espaçamento entre os campos */
+  margin: 20px;
+}
+
+.filter-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500; /* Adicionando a mesma fonte para os labels */
+}
+
+.filter-form input {
+  margin-top: 5px;
+  padding: 8px; /* Espaçamento interno */
+  border: 1px solid #ddd; /* Borda do input */
+  border-radius: 5px; /* Arredondando as bordas */
+  font-family: 'Poppins', sans-serif; /* Usando a mesma fonte */
+}
+
+.filter-form button {
+  padding: 10px 15px; /* Tamanho do botão */
+  border: none; /* Sem borda */
+  border-radius: 5px; /* Arredondando as bordas */
+  background-color: rgb(57, 57, 226); /* Cor de fundo */
+  color: white; /* Cor do texto */
+  font-family: 'Poppins', sans-serif; /* Usando a mesma fonte */
+  cursor: pointer; /* Mudando o cursor */
+  transition: background-color 0.3s; /* Transição suave */
+}
+
+.filter-form button:hover {
+  background-color: rgba(57, 57, 226, 0.8); /* Efeito hover */
+}

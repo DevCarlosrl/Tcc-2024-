@@ -1,0 +1,130 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.container {
+    width: 95%;
+    max-width: 1200px;
+    height: auto;
+    max-height: 90%;
+    border-radius: 10px;
+    background: white;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    background-color: rgba(57, 57, 226, 0.2);
+    color: #333;
+}
+
+.header span {
+    font-weight: 900;
+    font-size: 22px;
+}
+
+#print-button, #back-button {
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: rgb(57, 57, 226);
+    cursor: pointer;
+    margin-left: 8px;
+    transition: background-color 0.3s;
+}
+
+#print-button:hover, #back-button:hover {
+    background-color: rgba(57, 57, 226, 0.8);
+}
+
+.divTable {
+    padding: 16px;
+    overflow: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+thead {
+    background-color: #3C91E6;
+    color: white;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    font-weight: bold;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.acao {
+    text-align: center;
+    width: 200px;
+}
+
+td {
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.acao select, .acao button {
+    margin: 4px 0;
+}
+
+.acao button {
+    background-color: #3C91E6;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.acao button:hover {
+    background-color: #2A6EB5;
+}
+
+.acao button.remove {
+    background-color: #DB504A;
+}
+
+.acao button.remove:hover {
+    background-color: #B43D36;
+}

@@ -1,0 +1,504 @@
+@font-face {
+    font-family: "Sohne";
+    src: url("/assets/Font/Sohne/TestSohneBreit-Leicht-BF663d89cae7333.otf");
+  }
+  
+  @font-face {
+    font-family: "Mont";
+    src: url("/assets/Font/Mont/Mont-ExtraLightDEMO.otf");
+  }
+  
+  
+  :root{
+    --white:#ffffff;
+    --cor0: #fffaf2;
+    --cor1: #E0D0B6;
+    --cor2: #DFCAB7;        
+    --cor3: #C9B2A0;        
+    --cor5: #53382a;
+    --cor4: #3E2214;
+    --black:#000000;
+  
+    --Sohne: "Sohne";
+    --Mont: "Mont";
+  }
+  
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  body{
+  background-color: var(--cor1);
+  }
+  
+  .header{
+  background-color: rgba(255, 255, 255, 0.1); /* Transparente */
+  backdrop-filter: blur(10px); /* Desfoque de fundo */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  width: 85%;
+  height: 80px;
+  margin: 30px 90px;
+  border-radius: 20px;
+  position: fixed;
+  z-index: 999;
+  }
+  
+  .navbar_carrinho{
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  }
+  
+  .logo-container{
+  width: 30px;
+  height: 30px;
+  margin-left: 30px;
+  }
+  
+  .logo-container img{
+  width: 100%;
+  height: 100%;
+  }
+  
+  .menu_carrinho{
+  display: flex;
+  }
+  
+  .menu_carrinho li{
+  list-style: none;
+  margin-top: 15px;
+  }
+  
+  .menu_carrinho li a{
+  color: var(--cor4);
+  font-weight: 700;
+  padding: 5px;
+  text-decoration: none;
+  }
+  
+  .login_{
+  display: flex;
+  margin-right: 30px;
+  }
+  
+  .login_ li{
+  list-style: none;
+  padding: 5px;
+  }
+  
+  .login_ li img{
+  width: 17px;
+  height: 17px;
+  color: var(--cor1);
+  margin-top: 10px;
+  }
+  
+  .menu_carrinho a,  .login_ a{
+  opacity: 0.8;
+  transition: all .3s ease;
+  }
+  
+  .menu_carrinho a:hover,  .login_ a:hover{
+  opacity: 1;
+  }
+  
+  .cart-count {
+    position: absolute;
+    top: 20px;
+    right: 165px;
+    background-color: red;
+    color: white;
+    font-size: 10px;
+    padding: 1px 4px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .profile-dropdown {
+    position: relative;
+    width: fit-content;
+    margin-left: 20px;
+  }
+  
+  .profile-dropdown-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: .5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    width: 120px;
+    border-radius: 50px;
+    color: var(--cor1);
+    /* background-color: white;
+    box-shadow: var(--shadow); */
+  
+    cursor: pointer;
+    border: 1px solid var(--cor3);
+    transition: box-shadow 0.2s ease-in, background-color 0.2s ease-in,
+      border 0.3s;
+  }
+  
+  .profile-dropdown-btn:hover {
+    background-color: var(--secondary-light-2);
+    box-shadow: var(--shadow);
+  }
+  
+  .profile-img {
+    position: relative;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: url(https://img.myloview.com.br/adesivos/avatar-cabeca-perfil-silhueta-chamada-centro-masculino-foto-400-151766550.jpg);
+    background-size: cover;
+  }
+  
+  .profile-img i {
+    position: absolute;
+    right: 0;
+    bottom: 0.3rem;
+    font-size: 0.5rem;
+    color: var(--cor5);
+  }
+  
+  .profile-dropdown-btn span {
+    margin: auto;
+    margin-right: 0;
+  }
+  
+  .profile-dropdown-list {
+    position: absolute;
+    top: 68px;
+    width: 220px;
+    right: -20;
+    background-color: var(--cor3);
+    border-radius: 10px;
+    max-height: 0;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: max-height 0.5s;
+  }
+  
+  .profile-dropdown-list hr {
+    border: 0.5px solid var(--cor4);
+  }
+  
+  .profile-dropdown-list.active {
+    max-height: 500px;
+  }
+  
+  .profile-dropdown-list-item {
+    padding: 0.5rem 0rem 0.5rem 1rem;
+    transition: background-color 0.2s ease-in, padding-left 0.2s;
+  }
+  
+  .profile-dropdown-list-item a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--black);
+  }
+  
+  .profile-dropdown-list-item a i {
+    margin-right: 0.8rem;
+    font-size: 1.1rem;
+    width: 2.3rem;
+    height: 2.3rem;
+    background-color: var(--cor2);
+    color: var(--white);
+    line-height: 2.3rem;
+    text-align: center;
+    margin-right: 1rem;
+    border-radius: 50%;
+    transition: margin-right 0.3s;
+  }
+  
+  .profile-dropdown-list-item:hover {
+    padding-left: 1.5rem;
+    background-color: var(--cor2);
+  }
+
+  .table {
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: #8B4513;
+    color: white;
+}
+.table th, .table td {
+    text-align: center;
+    padding: 15px;
+}
+.table th {
+    background-color: #6B4F3B;
+}
+.table tr:nth-child(even) {
+    background-color: #5C3E30;
+}
+.btn-custom {
+    background-color: #28a745;
+    color: white;
+    margin: 10px 0;
+}
+.btn-custom:hover {
+    background-color: #218838;
+}
+.icon-remove {
+    color: #dc3545;
+    cursor: pointer;
+    font-size: 1.5em;
+}
+.product-image {
+    width: 50px;
+    height: auto;
+}
+.page-title {
+    text-align: center;
+    font-size: 2em;
+    margin: 20px 0;
+}
+.content {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+aside {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+body > main {
+  background: #fff;
+  padding: 0 30px 30px;
+}
+
+body > main .page-title {
+  font-size: 40px;
+  padding: 50px 0;
+  text-align: center;
+}
+
+body > main .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body > main .content section {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+body > main .content aside {
+  min-width: 250px;
+}
+
+button {
+  cursor: pointer;
+  font-family: 'Lato', sans-serif;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table thead tr {
+  border-bottom: 3px solid #eee;
+}
+
+table thead tr th {
+  text-align: left;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  color: #666;
+}
+
+table tbody tr {
+  border-bottom: 3px solid #eee;
+}
+
+table tbody tr:last-child {
+  border: 0;
+}
+
+table tbody tr td {
+  padding: 30px 0;
+}
+
+.product {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.product img {
+  border-radius: 6px;
+}
+
+.product .info {
+  margin-left: 20px;
+}
+
+.product .info .name {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.product .info .category {
+  color: #666;
+}
+
+.qty {
+  background: #eee;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0 0;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-width: 60px;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 30px;
+}
+
+.qty span {
+  margin: 0 10px;
+}
+
+.qty button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: transparent;
+  border: 0;
+  padding: 0 10px;
+  font-size: 20px;
+  height: 100%;
+}
+
+.qty button:hover {
+  background: #ddd;
+}
+
+.remove {
+  background: #eee;
+  border: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 20px;
+}
+
+.remove:hover {
+  background: #ddd;
+}
+
+aside {
+  margin-left: 30px;
+}
+
+aside .box {
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  background: #eee;
+  color: #222;
+}
+
+aside .box header {
+  padding: 15px 20px;
+  font-size: 18px;
+  border-bottom: 1px solid #ccc;
+}
+
+aside .box .info {
+  padding: 20px;
+  font-size: 16px;
+}
+
+aside .box .info > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+aside .box .info > div:last-child {
+  margin: 0;
+}
+
+aside .box .info button {
+  color: #28a745;
+  background: transparent;
+  border: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 16px;
+}
+
+aside .box footer {
+  padding: 15px 20px;
+  background: #ddd;
+  font-size: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+aside > button {
+  border: 0;
+  padding: 15px 0;
+  color: white;
+  background: #28a745;
+  display: block;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 16px;
+}
+
+aside > button:hover {
+  background: #3bc55b;
+}
+/*# sourceMappingURL=styles.css.map */
